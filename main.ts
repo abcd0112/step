@@ -1,13 +1,33 @@
+input.onButtonPressed(Button.A, function () {
+    Step = 0
+})
 input.onGesture(Gesture.Shake, function () {
     Step += 1
-    basic.showNumber(1)
-    Step += 1
-    basic.showNumber(2)
-    Step += 1
-    basic.showNumber(3)
+    led.stopAnimation()
 })
 let Step = 0
-basic.showNumber(Step)
+Step = 0
 basic.forever(function () {
     basic.showNumber(Step)
+    basic.showLeds(`
+        . . . # #
+        . . . # #
+        . . # # #
+        . # # # #
+        # # # # #
+        `)
+    basic.showLeds(`
+        . . # # .
+        . . # # .
+        . . # # .
+        . # # # .
+        # # # # .
+        `)
+    basic.showLeds(`
+        . # # . .
+        . # # . .
+        . # # . .
+        . # # . .
+        # # # . .
+        `)
 })
